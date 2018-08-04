@@ -15,9 +15,9 @@ dotnet_csproj:
   informational_version: '{version}'
 before_build:
 - ps: >-
-    yarn install
-    yarn webpack --config webpack.config.vendor.js
-    yarn webpack
+    npm install
+    npm webpack --config webpack.config.vendor.js
+    npm webpack
     dotnet restore
 build:
   project: techatagoda22.csproj
