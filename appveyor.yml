@@ -16,8 +16,11 @@ dotnet_csproj:
 before_build:
 - ps: >-
     npm install
+
     npm webpack --config webpack.config.vendor.js
+
     npm webpack
+    
     dotnet restore
 build:
   project: techatagoda22.csproj
