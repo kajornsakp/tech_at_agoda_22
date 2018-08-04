@@ -22,10 +22,12 @@ before_build:
     npm webpack --config webpack.config.vendor.js
 
     npm webpack
+
+    cd ..
     
     dotnet restore
 build:
-  project: techatagoda22.csproj
+  project: techatagoda22.sln
   publish_aspnet_core: true
   verbosity: minimal
 notifications:
