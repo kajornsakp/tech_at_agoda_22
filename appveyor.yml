@@ -33,6 +33,10 @@ build:
 test_script:
 - ps: >-
     & $env:USERPROFILE\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe -register:user -oldStyle -target:"dotnet.exe" -targetargs:"test tests\tests.csproj" -filter:"+[techatagoda22*]* +[tests*]*" -output:"coverage.xml"
+
+    choco install codecov
+    
+    codecov -f coverage.xml
 notifications:
 - provider: GitHubPullRequest
   on_build_success: true
